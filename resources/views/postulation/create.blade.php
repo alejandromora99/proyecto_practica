@@ -456,7 +456,6 @@
 
 <script type="text/javascript" src="{{URL::asset('js/activities_table.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('js/cronograme_table.js')}}"></script>
-
 <script type="text/javascript" src="{{URL::asset('js/rrhh_table.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('js/validate_input_num.js')}}"></script>
 <script type="text/javascript"

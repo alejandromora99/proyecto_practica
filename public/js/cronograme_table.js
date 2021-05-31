@@ -132,7 +132,6 @@ function contenido(duration){
     return tr_mes;
 }
 
-
 //funcion para añadir otro tr de actividad
 function new_activity(){
     var count_month = document.getElementById("cronograme").querySelectorAll("th").length - 1;
