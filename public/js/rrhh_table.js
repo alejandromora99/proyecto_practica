@@ -16,7 +16,7 @@ function generate_table_rrhh(e){
     var tbody = document.createElement("tbody");
 
     //contenido del head
-    tr_thead = tabla.insertRow();
+    tr_thead = document.createElement("tr");
 
     var th = document.createElement("th");
     th.className = "text-center";
@@ -73,11 +73,13 @@ function content(){
             input_profile.type = "text";
         }else{
             input_profile.type = "number";
+            input_profile.addEventListener('keydown' , validate);
+            input_profile.addEventListener('paste' , paste); 
         }
         
         input_profile.className = "form-control";
         input_profile.required = true;
-        input_profile.name = "perfil_profesional";
+        input_profile.name = "detalle_recurso_humano[]";
 
         var td_profile= document.createElement("td");
         td_profile.appendChild(input_profile);

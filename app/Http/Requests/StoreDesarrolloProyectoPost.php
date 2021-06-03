@@ -35,9 +35,9 @@ class StoreDesarrolloProyectoPost extends FormRequest
             "beneficiario_indirecto_hombre" => "required",
             "beneficiario_indirecto_mujer" => "required",
             "beneficiario_indirecto_total" => "required",
-            // falta ckeditor
+            "content" => "required",
             "resultados_esperados" => "required",
-            "actividades" => "required",
+            "cronograma" => "required",
             "detalles_actividades" => "required",
             
             "recursos_humanos" => "required",
@@ -46,7 +46,7 @@ class StoreDesarrolloProyectoPost extends FormRequest
             "gastos_en_difusion" => "required",
             "total_presupuesto" => "required",
 
-            "perfil_profesional" => "required"
+            "detalle_recurso_humano" => "required"
 
 
         ];

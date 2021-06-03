@@ -1,0 +1,62 @@
+.content-update {
+    border: 1px solid var(--ck-color-base-border);
+    border-radius: var(--ck-border-radius);
+    box-shadow: 2px 2px 0px hsla( 0, 0%, 0%, 0.1 );
+    margin: 1.5em 0;
+    padding: 1em;
+}
+
+.content-update h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 .5em;
+    padding: 0;
+}
+
+.content-update .ck.ck-editor__editable_inline {
+    border: 1px solid hsla( 0, 0%, 0%, 0.15 );
+    transition: background .5s ease-out;
+    min-height: 6em;
+    margin-bottom: 1em;
+}
+
+.content-update__controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.content-update__chart {
+    margin-right: 1em;
+}
+
+.content-update__chart__circle {
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.content-update__chart__characters {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.content-update__words {
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.content-update__limit-close .content-update__chart__circle {
+    stroke: hsl( 30, 100%, 52% );
+}
+
+.content-update__limit-exceeded .ck.ck-editor__editable_inline {
+    background: hsl( 0, 100%, 97% );
+}
+
+.content-update__limit-exceeded .content-update__chart__circle {
+    stroke: hsl( 0, 100%, 52% );
+}
+
+.content-update__limit-exceeded .content-update__chart__characters {
+    fill: hsl( 0, 100%, 52% );
+}

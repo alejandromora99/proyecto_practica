@@ -8,7 +8,7 @@ var invalidChars = [
 //añado eventos a los input number
 for (var i = 0 ; i < inputs.length; i++) {
     inputs[i].addEventListener('keydown' , validate); 
-    inputs[i].addEventListener('paste' , paste) ; 
+    inputs[i].addEventListener('paste' , paste); 
  }
 
 

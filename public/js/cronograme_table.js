@@ -94,14 +94,14 @@ function contenido(duration){
             input_act.type = "text";
             input_act.className = "form-control cron";
             input_act.id = "act_"+count;
-            input_act.name = "actividades[]";
+            input_act.name = "cronograma[]";
             input_act.required = true;
             celda.appendChild(input_act);
             tr_mes.appendChild(celda);
         }else{
             var check_act = document.createElement("input");
             check_act.type = "checkbox";
-            check_act.name = "act[]";
+            check_act.name = "cronograma[]";
             check_act.value = "mes_"+j;
             celda.style.textAlign = "center";
             celda.appendChild(check_act);

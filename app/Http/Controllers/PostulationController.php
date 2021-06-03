@@ -31,7 +31,6 @@ class PostulationController extends Controller
     
     public function create()
     {
-
         return view("postulation.create");
     }
 

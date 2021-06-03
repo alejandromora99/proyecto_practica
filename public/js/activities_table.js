@@ -64,14 +64,11 @@ function generate_table_activities(e){
                 if(j==0){
                     td_body = document.createElement("td");
                     input_body = document.createElement("input");
-                    input_body.name = "nombre_actividades[]";
-                    // input_body.id = "nombre_actividades";
                     //obtengo los input de la tabla cronograme y le entrego el value a estos input
                     input_body.value =matches[i].value;
                     
                     input_body.className = "form-control";
                     input_body.disabled = true;
-                    input_body.required = true;
                     td_body.appendChild(input_body);
                     tr_body.appendChild(td_body);
     
