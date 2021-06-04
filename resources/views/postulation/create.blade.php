@@ -227,7 +227,7 @@
                         <h2 for="benef_dir_hombre">Cobertura – Cantidad beneficiarios directos e indirectos del proyecto</h2>
                         <div class="row">
                             <div class="col-md-6">
-                                <table class="table table-bordered table-hover">
+                                <table id="tabla_beneficiarios_directos" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
                                         <th scope="col" colspan="2" class="text-center success">Beneficiarios directos</th>
@@ -236,22 +236,22 @@
                                     <tbody>
                                         <tr>
                                         <th scope="row" >Hombres:</th>
-                                        <td><input type="number" min="0" class="form-control" name="beneficiario_directo_hombre" id="beneficiario_directo_hombre" value="{{old('beneficiario_directo_hombre')}}" required></td>
+                                        <td><input type="number" min="0" class="form-control" name="beneficiario_directo_hombre" id="beneficiario_directo_hombre" value="{{old('beneficiario_directo_hombre', 0)}}" required></td>
                                         </tr>
                                         <tr>
                                         <th scope="row">Mujeres:</th>
-                                        <td><input type="number" min="0" class="form-control" name="beneficiario_directo_mujer" id="beneficiario_directo_mujer" value="{{old('beneficiario_directo_mujer')}}" required></td>
+                                        <td><input type="number" min="0" class="form-control" name="beneficiario_directo_mujer" id="beneficiario_directo_mujer" value="{{old('beneficiario_directo_mujer', 0)}}" required></td>
                                         </tr>
                                         <tr>
                                         <th scope="row">Total:</th>
-                                        <td><input type="number" min="1" class="form-control" name="beneficiario_directo_total" id="beneficiario_directo_total" value="{{old('beneficiario_directo_total')}}" required></td>
+                                        <td><input type="number" min="1" class="form-control" name="beneficiario_directo_total" id="beneficiario_directo_total" value="{{old('beneficiario_directo_total', 0)}}" required readonly></td>
                                         </tr>
                                     </tbody>
                                     </table>
                             </div>
 
                             <div class="col-md-6">
-                                <table class="table table-bordered table-hover">
+                                <table id="tabla_beneficiarios_indirectos" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
                                         <th scope="col" colspan="2" class="text-center success">Beneficiarios indirectos</th>
@@ -260,15 +260,15 @@
                                     <tbody>
                                         <tr>
                                         <th scope="row">Hombres:</th>
-                                        <td><input type="number" min="0" class="form-control" name="beneficiario_indirecto_hombre" id="beneficiario_indirecto_hombre" value="{{old('beneficiario_indirecto_hombre')}}" required></td>
+                                        <td><input type="number" min="0" class="form-control" name="beneficiario_indirecto_hombre" id="beneficiario_indirecto_hombre" value="{{old('beneficiario_indirecto_hombre', 0)}}" required></td>
                                         </tr>
                                         <tr>
                                         <th scope="row">Mujeres:</th>
-                                        <td><input type="number" min="0" class="form-control" name="beneficiario_indirecto_mujer" id="beneficiario_indirecto_mujer" value="{{old('beneficiario_indirecto_mujer')}}" required></td>
+                                        <td><input type="number" min="0" class="form-control" name="beneficiario_indirecto_mujer" id="beneficiario_indirecto_mujer" value="{{old('beneficiario_indirecto_mujer', 0)}}" required></td>
                                         </tr>
                                         <tr>
                                         <th scope="row">Total:</th>
-                                        <td><input type="number" min="1" class="form-control" name="beneficiario_indirecto_total" id="beneficiario_indirecto_total" value="{{old('beneficiario_indirecto_total')}}" required></td>
+                                        <td><input type="number" min="1" class="form-control" name="beneficiario_indirecto_total" id="beneficiario_indirecto_total" value="{{old('beneficiario_indirecto_total', 0)}}" required readonly></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -345,7 +345,7 @@
                         <div class="form-group">
                             <h2>Presupuesto resumido</h2>
                             <div>(valores deben coincidir con totales del Formulario 2: Presupuesto Detallado)</div><br>
-                            <table class="table table-bordered table-hover">
+                            <table class="table table-bordered table-hover" id="tabla_presupuesto_detallado">
                                 <thead>
                                     <tr>
                                         <th scope="col-md-6" class="text-center success">Item</th>
@@ -355,23 +355,23 @@
                                 <tbody>
                                     <tr>
                                         <td scope="row">Recursos humanos:</td>
-                                        <td><input type="number" min="0" class="form-control" name="recursos_humanos" id="recursos_humanos" value="{{old('recursos_humanos')}}" required></td>
+                                        <td><input type="number" min="0" class="form-control" name="recursos_humanos" id="recursos_humanos" value="{{old('recursos_humanos', 0)}}" required></td>
                                     </tr>
                                     <tr>
                                         <td scope="row">Gastos en equipamiento:</td>
-                                        <td><input type="number" min="0" class="form-control" name="gastos_en_equipamiento" id="gastos_en_equipamiento" value="{{old('gastos_en_equipamiento')}}" required></td>
+                                        <td><input type="number" min="0" class="form-control" name="gastos_en_equipamiento" id="gastos_en_equipamiento" value="{{old('gastos_en_equipamiento', 0)}}" required></td>
                                     </tr>
                                     <tr>
                                         <td scope="row">Gastos generales:</td>
-                                        <td><input type="number" min="0" class="form-control" name="gastos_generales" id="gastos_generales" value="{{old('gastos_generales')}}" required></td>
+                                        <td><input type="number" min="0" class="form-control" name="gastos_generales" id="gastos_generales" value="{{old('gastos_generales', 0)}}" required></td>
                                     </tr>
                                     <tr>
                                         <td scope="row">Gastos en difusión:</td>
-                                        <td><input type="number" min="0" class="form-control" name="gastos_en_difusion" id="gastos_en_difusion" value="{{old('gastos_en_difusion')}}" required></td>
+                                        <td><input type="number" min="0" class="form-control" name="gastos_en_difusion" id="gastos_en_difusion" value="{{old('gastos_en_difusion', 0)}}" required></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Total presupuesto:</th>
-                                        <td><input type="number" min="0" class="form-control" name="total_presupuesto" id="total_presupuesto" value="{{old('total_presupuesto')}}" required></td>
+                                        <td><input type="number" min="0" class="form-control" name="total_presupuesto" id="total_presupuesto" value="{{old('total_presupuesto', 0)}}" required readonly></td>
                                     </tr>
                                 </tbody>
                                 
@@ -450,6 +450,7 @@
                             <input type="text" name="longitude2" id="longitude2" class="form-control" readonly>
                             
                         </div>
+                        <input type="button" class="btn btn-primary" value="Mostrar mapa" id="show_marker_map" >
 
                         <div class="form-group">
                             <div id="map_canvas2" class="form-control" style=" display:none; width: auto; height: 400px;"></div>
@@ -459,7 +460,7 @@
 
                         {{-- fin de mapa --}}
 
-
+                        <hr>
                         <input class="btn btn-success" type="button" value="Subir archivo">
                     </form>
                 </div>
@@ -481,5 +482,7 @@ src="https://maps.google.com/maps/api/js?key=AIzaSyBx2k43lsem3ljuOYCVOQEx8vuHqtD
 </script>
 <script type="text/javascript" src="{{URL::asset('js/autocomplete_gmap.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('js/gmap2.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('js/suma_presupuesto_resumido.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('js/suma_beneficiarios.js')}}"></script>
 
 @endsection
