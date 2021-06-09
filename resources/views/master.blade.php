@@ -1,22 +1,19 @@
 @extends('adminlte::page')
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/ckeditor_css.css') }}">
-@stop
+@endsection
+
 @section('title', 'Dashboard')
 
 @section('content_header')
     <h1>Dashboard</h1>
-@stop
+@endsection
 
-@section('content')
-    <p>Welcome to this beautiful admin panel.</p>
-@stop
+{{-- @section('content')
+
+@endsection --}}
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script src="{{ asset("js/app.js") }}"></script>
-@stop
+@endsection
 

@@ -1,12 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\postulation;
 
+use App\Location;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreLocationPost;
 use App\Http\Requests\StoreAspectosProyectoPost;
 use App\Http\Requests\StoreDesarrolloProyectoPost;
 use App\Http\Requests\StoreAntecedentesInstitucionPost;
 use App\Http\Requests\StoreAntecedentesResponsablePost;
+use App\Http\Controllers\Controller;
 
 class PostulationController extends Controller
 {
@@ -31,6 +34,7 @@ class PostulationController extends Controller
     
     public function create()
     {
+        $location = new Location();
         return view("postulation.create");
     }
 
@@ -61,6 +65,14 @@ class PostulationController extends Controller
     public function storeDesarrolloProyecto(StoreDesarrolloProyectoPost $request)
     {
         dd($request);
+    }
+
+    public function storeLocation(StoreLocationPost $request)
+    {
+        // dd($request);
+        Location::create($request->validated());
+        // dd($location->direccion);
+        return back()->withInput()->with('status', 'Localización guardada con éxito');
     }
 
     public function store(Request $request)

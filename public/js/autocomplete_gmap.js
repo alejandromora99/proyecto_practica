@@ -12,15 +12,15 @@ function initialize() {
         componentRestrictions: { country: "CL" },
       };
 
-    var input = document.getElementById('autocomplete', );
+    var input = document.getElementById('direccion');
     var autocomplete = new google.maps.places.Autocomplete(input, options);
 
     autocomplete.addListener('place_changed', function () {
         var place = autocomplete.getPlace();
-        document.getElementById("latitude").value = place.geometry['location'].lat();
-        document.getElementById("longitude").value = place.geometry['location'].lng();
-        var latitude = document.getElementById("latitude").value;
-        var longitude = document.getElementById("longitude").value;
+        document.getElementById("lat").value = place.geometry['location'].lat();
+        document.getElementById("lng").value = place.geometry['location'].lng();
+        var latitude = document.getElementById("lat").value;
+        var longitude = document.getElementById("lng").value;
         // console.log("latitud: "+latitude + " longitud: "+longitude);
         // si el mapa no ha sido creado, se crea y se pone el marcador
         if(map_f == null){
