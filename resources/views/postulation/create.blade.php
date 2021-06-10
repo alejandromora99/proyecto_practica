@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/ckeditor_css.css') }}">
+@endsection
+
 @section('content')
 <h1>Formulario de presentación de proyecto</h1>
 <div class="row mt-3">
@@ -420,6 +424,12 @@
                         </div>
 
                         <div class="form-group">
+                            <label>Comuna</label>
+                            <input type="text" name="comuna_direccion" id="comuna_direccion" class="form-control" value="{{ old('comuna_direccion') }}" readonly>
+                            
+                        </div>
+
+                        <div class="form-group">
                             <div id="map_canvas" class="form-control" style=" display:none; width: auto; height: 400px;"></div>
                         </div>
                         
@@ -475,20 +485,21 @@
     </div>
 </div>
 
-<script type="text/javascript" src="{{URL::asset('js/validate_input_num.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('js/cronograme_table.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('js/activities_table.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('js/rrhh_table.js')}}"></script>
-<script type="text/javascript"
-src="https://maps.google.com/maps/api/js?key=AIzaSyBx2k43lsem3ljuOYCVOQEx8vuHqtDS6D8&libraries=places&callback">
-</script>
-<script type="text/javascript" src="{{URL::asset('js/autocomplete_gmap.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('js/gmap2.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('js/suma_presupuesto_resumido.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('js/suma_beneficiarios.js')}}"></script>
+
 
 @endsection
 
 @section('js')
     <script src="{{ asset("js/app.js") }}"></script>
+    <script type="text/javascript" src="{{URL::asset('js/validate_input_num.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('js/cronograme_table.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('js/activities_table.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('js/rrhh_table.js')}}"></script>
+    <script type="text/javascript"
+    src="https://maps.google.com/maps/api/js?key=AIzaSyBx2k43lsem3ljuOYCVOQEx8vuHqtDS6D8&libraries=places&callback">
+    </script>
+    <script type="text/javascript" src="{{URL::asset('js/autocomplete_gmap.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('js/gmap2.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('js/suma_presupuesto_resumido.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('js/suma_beneficiarios.js')}}"></script>
 @endsection

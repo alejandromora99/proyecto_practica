@@ -18,6 +18,7 @@ class CreateLocationsTable extends Migration
             $table->string('direccion')->nullable();
             $table->string('lat');
             $table->string('lng');
+            $table->string('comuna_direccion');
             $table->timestamps();
         });
     }

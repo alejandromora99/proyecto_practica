@@ -1,7 +1,4 @@
 @extends('adminlte::page')
-@section('css')
-    <link rel="stylesheet" href="{{ asset('css/ckeditor_css.css') }}">
-@endsection
 
 @section('title', 'Dashboard')
 

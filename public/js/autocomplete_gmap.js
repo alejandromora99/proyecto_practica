@@ -8,8 +8,9 @@ var markers = [];
 function initialize() {
     //restringo la busqueda solo a lugares de chile
     var options = {
-        // types: ["(cities)"],
+
         componentRestrictions: { country: "CL" },
+        // strictBounds: true,
       };
 
     var input = document.getElementById('direccion');
@@ -17,8 +18,17 @@ function initialize() {
 
     autocomplete.addListener('place_changed', function () {
         var place = autocomplete.getPlace();
+
+        var filtered_array = place.address_components.filter(function(address_component){
+            return address_component.types.includes("administrative_area_level_3");
+        });
+        var county = filtered_array.length ? filtered_array[0].long_name: "";
+        // console.log(county);
+
         document.getElementById("lat").value = place.geometry['location'].lat();
         document.getElementById("lng").value = place.geometry['location'].lng();
+        document.getElementById("comuna_direccion").value = county;
+
         var latitude = document.getElementById("lat").value;
         var longitude = document.getElementById("lng").value;
         // console.log("latitud: "+latitude + " longitud: "+longitude);
@@ -36,6 +46,10 @@ function initialize() {
             //agrego nuevo marcador
             set_marker(map_f,latitude,longitude);
         }
+
+        // alert(map_f.getBounds());
+
+        
         
     });
 }
@@ -50,6 +64,10 @@ function loadMap(latitude,longitude){
         // center: {latitude_f, longitude_f},
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+
+    // google.maps.event.addListener(map, 'bounds_changed', function() {
+    //     alert(map.getBounds());
+    // });
     
     // paso el mapa a una variable global
     map_f = map;

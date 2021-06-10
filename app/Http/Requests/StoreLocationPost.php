@@ -27,7 +27,8 @@ class StoreLocationPost extends FormRequest
             //
             "direccion" => "required",
             "lat" => "required",
-            "lng" => "required"
+            "lng" => "required",
+            "comuna_direccion" => "required"
         ];
     }
 }

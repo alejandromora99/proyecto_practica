@@ -4,6 +4,7 @@ namespace App\Http\Controllers\map;
 
 use App\Location;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class LocationController extends Controller
@@ -17,8 +18,12 @@ class LocationController extends Controller
     public function markers()
     {
         $marcadores = Location::all();
+        $comunas = DB::table('locations')
+        ->select('comuna_direccion')
+        ->distinct()
+        ->get();
         // dd(json_encode($marcadores));
-        return view("map.markers", ['markers' => $marcadores]);
+        return view("map.markers", compact("marcadores","comunas"));
         // return view("map.markers", compact("marcadores"));
     }
     public function index()
