@@ -496,7 +496,7 @@
     <script type="text/javascript" src="{{URL::asset('js/activities_table.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('js/rrhh_table.js')}}"></script>
     <script type="text/javascript"
-    src="https://maps.google.com/maps/api/js?key=AIzaSyBx2k43lsem3ljuOYCVOQEx8vuHqtDS6D8&libraries=places&callback">
+    src="https://maps.google.com/maps/api/js?key=AIzaSyBx2k43lsem3ljuOYCVOQEx8vuHqtDS6D8&libraries=places,geometry&callback">
     </script>
     <script type="text/javascript" src="{{URL::asset('js/autocomplete_gmap.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('js/gmap2.js')}}"></script>
