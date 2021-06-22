@@ -9,8 +9,8 @@ function initialize() {
     //restringo la busqueda solo a lugares de chile
     var options = {
 
-        componentRestrictions: { country: "CL" },
-        // strictBounds: true,
+        componentRestrictions: { country: "CL"},
+        // administrative_area_1 : "biobio"
       };
 
     var input = document.getElementById('direccion');

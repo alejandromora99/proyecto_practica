@@ -38,7 +38,7 @@ function gmap2(){
         geocoder.geocode({ location: latlng }, (results, status) => {
             if(status === "OK" ){
                 if(results[0]){
-                    $("#direccion").val(results[0].formatted_address);
+                    $("#reverse_geo").val(results[0].formatted_address);
                 }else{
                     alert("Ubicación no disponible.")
                 }

@@ -11,26 +11,18 @@
       <!-- Custom Tabs -->
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs" id="mytabs">
-                <li class="{{old('nav_flag') == '1' || old('nav_flag') == ""  ? 'active' : '' }}"><a href="#tab_1" data-toggle="tab">Aspectos del proyecto</a></li>
-                <li class="{{old('nav_flag') == '2' ? 'active' : ''}}" ><a href="#tab_2" class="{{old('nav_flag') == '2' ? 'active' : ''}}" data-toggle="tab">Antecedentes de la institución postulante</a></li>
-                <li class="{{old('nav_flag') == '3' ? 'active' : ''}}" ><a href="#tab_3" class="{{old('nav_flag') == '3' ? 'active' : ''}}" data-toggle="tab">Antecedentes del responsable del proyecto</a></li>   
-                <li class="{{old('nav_flag') == '4' ? 'active' : ''}}" ><a href="#tab_4" class="{{old('nav_flag') == '4' ? 'active' : ''}}" data-toggle="tab">Desarrollo del proyecto</a></li>
-                <li class="{{old('nav_flag') == '5' ? 'active' : ''}}" ><a href="#tab_5" class="{{old('nav_flag') == '5' ? 'active' : ''}}" data-toggle="tab">GMAP</a></li>
+                <li class="{{old('nav_flag') == '1' || old('nav_flag') == ""  ? 'active' : '' }} " ><a href="#tab_1" data-toggle="tab">Aspectos del proyecto</a></li>
+                <li class="{{old('nav_flag') == '2' ? 'active' : ''}}" ><a href="#tab_2" data-toggle="tab">Antecedentes de la institución postulante</a></li>
+                <li class="{{old('nav_flag') == '3' ? 'active' : ''}}" ><a href="#tab_3" data-toggle="tab">Antecedentes del responsable del proyecto</a></li>   
+                <li class="{{old('nav_flag') == '4' ? 'active' : ''}}" ><a href="#tab_4" data-toggle="tab">Desarrollo del proyecto</a></li>
+                <li class="{{old('nav_flag') == '5' ? 'active' : ''}}" ><a href="#tab_5"  data-toggle="tab">GMAP</a></li>
                 <li><a href="#tab_6" data-toggle="tab">GMAP2</a></li>
             </ul>
             <div class="tab-content">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                @include('partials.error')
 
                 @include('partials.session-flash-status')
-                <div class="tab-pane {{old('nav_flag') == '1' || old('nav_flag') == ""  ? 'active' : '' }}" id="tab_1">
+                <div class="tab-pane {{old('nav_flag') == '1' || old('nav_flag') == ""  ? 'active' : '' }}" @if(session('page')!=="1") class='' @endif id="tab_1">
                     <form action="{{route("aspectosproyecto.store")}}" method="POST">
                         <input type="text" name="nav_flag" id="nav_flag" value="1" readonly style="display: none">
                         @csrf
@@ -449,7 +441,7 @@
 
                         <div class="form-group">
                             <label>Dirección</label>
-                            <input type="text" name="direccion" id="direccion" class="form-control" readonly>
+                            <input type="text" name="reverse_geo" id="reverse_geo" class="form-control" readonly>
                         </div>
                 
                         <div class="form-group">
@@ -496,7 +488,7 @@
     <script type="text/javascript" src="{{URL::asset('js/activities_table.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('js/rrhh_table.js')}}"></script>
     <script type="text/javascript"
-    src="https://maps.google.com/maps/api/js?key=AIzaSyBx2k43lsem3ljuOYCVOQEx8vuHqtDS6D8&libraries=places,geometry&callback">
+    src="https://maps.google.com/maps/api/js?key=AIzaSyBx2k43lsem3ljuOYCVOQEx8vuHqtDS6D8&libraries=places,geometry">
     </script>
     <script type="text/javascript" src="{{URL::asset('js/autocomplete_gmap.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('js/gmap2.js')}}"></script>

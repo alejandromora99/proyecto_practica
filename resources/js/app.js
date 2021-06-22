@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 
 require( '../../public/custom_ckeditor/ckeditor5/packages/ckeditor5-build-classic/build/ckeditor.js' );
 const maxCharacters = 7500;
@@ -57,6 +57,11 @@ ClassicEditor
     .catch( error => {
         console.error( error );
     } );
+
+
+
+// Add it to the DOM
+
 
 // window.Vue = require('vue');
 
