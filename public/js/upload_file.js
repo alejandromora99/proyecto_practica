@@ -10604,10 +10604,8 @@ function load_files() {
     url: window.location.href + "/dropzone/fetch",
     success: function success(data) {
       $("#uploaded_file").html(data);
-    },
-    error: function error(req, err) {
-      console.log(err);
-    }
+    } // error: function(req, err){ console.log(err); }
+
   });
 }
 

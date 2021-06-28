@@ -108,15 +108,14 @@ class FileController extends Controller
           exit('Este archivo no se encuentra en nuestro servidor');
       }
 
-
       // return Storage::download($file->file);}
     }
 
     function destroy(File $file){
       // dd($request);
-          $file->delete();
-          Storage::delete($file->file);
-          return back()->with('status', 'Archivo eliminado con éxito');
+      $file->delete();
+      Storage::delete($file->file);
+      return back()->with('status', 'Archivo eliminado con éxito');
       
   }
 }

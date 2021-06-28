@@ -71,7 +71,7 @@ function load_files(){
         success:function(data){
             $("#uploaded_file").html(data);
         },
-        error: function(req, err){ console.log(err); }
+        // error: function(req, err){ console.log(err); }
     })
 }
 

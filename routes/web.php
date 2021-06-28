@@ -39,6 +39,7 @@ Route::group(['prefix'=> 'postulacion'], function () {
 
 Route::group(['prefix'=> 'map'], function () {
     Route::get('ver-marcadores', 'map\LocationController@markers')->name('markers.show');
+    Route::resource('location', 'map\LocationController');
 });
 
 Route::group(['prefix'=> 'admin'], function () {
@@ -46,7 +47,7 @@ Route::group(['prefix'=> 'admin'], function () {
     Route::post('file/create/file-upload', 'file\FileController@upload')->name('file.upload');
     Route::get('file/create/dropzone/fetch', 'file\FileController@fetch')->name('dropzone.fetch');
     Route::post('file/create/dropzone/delete', 'file\FileController@delete');
-    Route::post('file/destroy/{file}', 'file\FileController@destroy')->name('file.destroy');
+    Route::delete('file/destroy/{file}', 'file\FileController@destroy')->name('file.destroy');
     Route::get('file/index', 'file\FileController@list_files')->name('file.index');
     Route::get('file/download/{file}', 'file\FileController@download_file')->name('file.download');
 });

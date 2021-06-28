@@ -26,9 +26,12 @@ class LocationController extends Controller
         return view("map.markers", compact("marcadores","comunas"));
         // return view("map.markers", compact("marcadores"));
     }
+
     public function index()
     {
         // return view("markers.show");
+        $locations = Location::orderBy('created_at','desc')->paginate(5);
+        return view("map.index", ['locations' => $locations]);
     }
 
     /**
@@ -92,8 +95,9 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Location $location)
     {
-        //
+        $location->delete();
+        return back()->with('status', 'Localización eliminada con éxito');
     }
 }
