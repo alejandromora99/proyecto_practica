@@ -129,7 +129,7 @@ class PostulationController extends Controller
         //
     }
 
-    public function PDF_locations(){
+    public function PDF_report(){
 
         $locations = Location::all();
         $files = File::all();

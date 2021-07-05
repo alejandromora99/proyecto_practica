@@ -35,7 +35,7 @@ Route::group(['prefix'=> 'postulacion'], function () {
     Route::post('ingresodocumento/antecedentesresponsable', 'postulation\PostulationController@storeAntecedentesResponsable')->name('antecedentesresponsable.store');
     Route::post('ingresodocumento/desarrolloproyecto', 'postulation\PostulationController@storeDesarrolloProyecto')->name('desarrolloproyecto.store');
     Route::post('ingresodocumento/location', 'postulation\PostulationController@storeLocation')->name('location.store');
-    Route::get('pdf', 'postulation\PostulationController@PDF_locations')->name('pdf.generate');
+    Route::get('pdf', 'postulation\PostulationController@PDF_report')->name('pdf.generate');
 });
 
 Route::group(['prefix'=> 'map'], function () {
