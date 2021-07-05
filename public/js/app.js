@@ -980,7 +980,9 @@ ClassicEditor.create(document.querySelector('#content'), {
   });
 })["catch"](function (error) {
   console.error(error);
-}); // Add it to the DOM
+}); // $(document).ready(console.log("hola"));
+// $("input#rut").rut();
+// Add it to the DOM
 // window.Vue = require('vue');
 
 /**

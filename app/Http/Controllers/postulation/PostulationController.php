@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers\postulation;
 
+use App\File;
 use App\Location;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreLocationPost;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Http\Requests\StoreAspectosProyectoPost;
 use App\Http\Requests\StoreDesarrolloProyectoPost;
 use App\Http\Requests\StoreAntecedentesInstitucionPost;
 use App\Http\Requests\StoreAntecedentesResponsablePost;
-use App\Http\Controllers\Controller;
 
 class PostulationController extends Controller
 {
@@ -123,5 +127,29 @@ class PostulationController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function PDF_locations(){
+
+        $locations = Location::all();
+        $files = File::all();
+        
+        //creo un nombre al archivo
+        $fileName =  'pdf_generado_'.date('Y-m-d').'.pdf';
+
+        $storage_path = asset('storage/pdf_files/'.$fileName);
+        
+        //creo el codigo,le doy un tamaño y la url que tendra vinculada
+        $codigoQR = QrCode::size(120)->generate($storage_path);
+
+        //indico que vista sera donde se mostrara el pdf y le paso las variables a mostrar
+        $pdf = PDF::loadView('assets.pdf.report_pdf', compact('locations','files', 'codigoQR'));
+
+        // guardo el pdf en storage
+        Storage::put('public/pdf_files/' . $fileName, $pdf->output());
+
+        //descargo el pdf
+        return $pdf->download($fileName);
+    
     }
 }

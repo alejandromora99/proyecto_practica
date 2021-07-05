@@ -1,0 +1,11 @@
+Ver dashboard de crear postulacion: /postulacion/ingresodocumento/create
+
+Generar pdf: /postulacion/pdf
+
+ver marcadores guardados en un mapa: /map/ver-marcadores
+
+listar o eliminar marcadores guardados en una tabla: /map/location
+
+funcion de subir archivos: /admin/file/create
+
+listar,descargar o eliminar archivos subidos: /admin/file/index

@@ -58,6 +58,8 @@ ClassicEditor
         console.error( error );
     } );
 
+    // $(document).ready(console.log("hola"));
+    // $("input#rut").rut();
 
 
 // Add it to the DOM

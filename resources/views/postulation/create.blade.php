@@ -478,7 +478,6 @@
 </div>
 
 
-
 @endsection
 
 @section('js')
@@ -494,4 +493,17 @@
     <script type="text/javascript" src="{{URL::asset('js/gmap2.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('js/suma_presupuesto_resumido.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('js/suma_beneficiarios.js')}}"></script>
+    {{-- plugi formateo rut --}}
+    <script type="text/javascript" src="{{URL::asset('js/jquery.rut.js')}}"></script>
+    <script type="text/javascript" >
+        $("#rut_institucion")
+            .rut({formatOn: 'keyup', validateOn: 'keyup'})
+            .on('rutInvalido', function(){ 
+                $(this).parents(".form-group").addClass("has-error")
+            })
+            .on('rutValido', function(){ 
+                $(this).parents(".form-group").removeClass("has-error")
+            });
+    </script>
+    
 @endsection

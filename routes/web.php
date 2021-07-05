@@ -35,6 +35,7 @@ Route::group(['prefix'=> 'postulacion'], function () {
     Route::post('ingresodocumento/antecedentesresponsable', 'postulation\PostulationController@storeAntecedentesResponsable')->name('antecedentesresponsable.store');
     Route::post('ingresodocumento/desarrolloproyecto', 'postulation\PostulationController@storeDesarrolloProyecto')->name('desarrolloproyecto.store');
     Route::post('ingresodocumento/location', 'postulation\PostulationController@storeLocation')->name('location.store');
+    Route::get('pdf', 'postulation\PostulationController@PDF_locations')->name('pdf.generate');
 });
 
 Route::group(['prefix'=> 'map'], function () {
@@ -51,6 +52,8 @@ Route::group(['prefix'=> 'admin'], function () {
     Route::get('file/index', 'file\FileController@list_files')->name('file.index');
     Route::get('file/download/{file}', 'file\FileController@download_file')->name('file.download');
 });
+
+
 // Route::get('localizations', 'PostulationController@storeAntecedentesResponsable')->name('antecedentesresponsable.store');
 
 

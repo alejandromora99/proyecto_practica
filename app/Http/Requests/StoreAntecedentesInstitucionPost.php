@@ -25,7 +25,7 @@ class StoreAntecedentesInstitucionPost extends FormRequest
     {
         return [
             "nombre_institucion" => "required",
-            "rut_institucion" => "required",
+            "rut_institucion" => "required|cl_rut",
             "nombre_del_representante" => "required",
             "telefono_fijo_institucion" => "required",
             "celular_institucion" => "required",

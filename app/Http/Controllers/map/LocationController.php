@@ -100,4 +100,6 @@ class LocationController extends Controller
         $location->delete();
         return back()->with('status', 'Localización eliminada con éxito');
     }
+
+    
 }
